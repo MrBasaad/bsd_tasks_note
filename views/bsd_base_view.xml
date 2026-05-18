@@ -1,0 +1,4 @@
+<odoo>
+    <menuitem id="bsd_root_list" name="Daily Tasks" web_icon="bsd.tasks,static/description/icon.png"/>
+    <menuitem id="bsd_nav_list" name="Task" parent="bsd_root_list"/>
+</odoo>

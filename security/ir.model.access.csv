@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_bsd_tasks,access_bsd_tasks,model_bsd_tasks,,1,1,1,1
+access_bsd_tasks_line,access_bsd_tasks_line,model_bsd_tasks_line,,1,1,1,1

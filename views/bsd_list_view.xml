@@ -1,0 +1,21 @@
+<odoo>
+    <record id="bsd_show_list_view" model="ir.ui.view">
+        <field name="name">view list</field>
+        <field name="model">bsd.tasks</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="reference" />
+                <field name="user_id" />
+                <field name="ticket_date" />
+                <field name="task_duration" />
+                <field name='ticket_done' />
+            </list>
+        </field>
+    </record>
+
+    <record id="bsd_show_lists" model="ir.actions.act_window">
+        <field name="name" >Tasks</field>
+        <field name="res_model">bsd.tasks</field>
+    </record>
+    <menuitem name="Tasks" id="bsd_drop_list" parent="bsd_nav_list" action="bsd_show_lists" />
+</odoo>
