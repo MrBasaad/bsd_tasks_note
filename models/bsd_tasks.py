@@ -2,7 +2,8 @@ from odoo import models,fields,api
 
 class BsdTasks(models.Model):
     _name = "bsd.tasks"
-    _description = "any"
+    _inherit = ['mail.thread','mail.activity.mixin']
+    _description = "Ticket"
     _rec_name = "reference"
     _log_access = False
     
@@ -50,7 +51,7 @@ class BsdTasks(models.Model):
 
 class BsdTasksLine(models.Model):
     _name = "bsd.tasks.line"
-    _description = "any"
+    _description = "Ticket Line"
     _log_access = False
     
     user_id = fields.Many2one('bsd.tasks')

@@ -1,0 +1,43 @@
+<odoo>
+    <record id="tasks_lines_view" model="ir.ui.view">
+        <field name="name">task all lines</field>
+        <field name="model">bsd.tasks.line</field>
+        <field name="arch" type="xml">
+            <list editable='bottom'>
+                <field name="user_id" />
+                <field name="task_prompt" />
+                <field name="task_row_is_done" />
+            </list>
+        </field>
+    </record>
+    <record id="search_for_Taksa" model="ir.ui.view">
+        <field name="name">search for tasks</field>
+        <field name="model">bsd.tasks.line</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="user_id" />
+                <field name="task_prompt" />
+                <field name="task_row_is_done" />
+                <filter name="TikectNumber" string="By Tikect NO" context="{'group_by':'user_id'}" />
+                <filter name="By Done" string="By Done" context="{'group_by':'task_row_is_done'}" />
+            </search>
+        </field>
+    </record>
+    <!-- فلتر مفضل -->
+    <record id="filter_for_tasksa" model="ir.filters">
+        <field name="name">By Tikect NO</field>
+        <field name="model_id">bsd.tasks.line</field>
+        <field name="context">{'group_by':['user_id']}</field>
+        <field name="is_default" eval="True" />
+        <field name="action_id" ref="bsd_show_all_tasks" />
+    </record>
+
+
+    <record id="bsd_show_all_tasks" model="ir.actions.act_window">
+        <field name="name">Tasks</field>
+        <field name="res_model">bsd.tasks.line</field>
+        <field name="view_mode">list,form,pivot,kanban,graph</field>
+    </record>
+    <menuitem id="bsd_drop_list_for_all" name="Tasks" parent="bsd_nav_list"
+        action="bsd_show_all_tasks" />
+</odoo>

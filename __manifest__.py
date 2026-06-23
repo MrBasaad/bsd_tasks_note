@@ -7,13 +7,14 @@
     'author': 'Basaad.co',
     'website': 'https://github.com/MrBasaad',
     'license': 'LGPL-3',
-    'depends': ['base'],
+    'depends': ['base','mail'],
     'data': [
         'security/ir.model.access.csv',
         'data/sequence_data.xml',
         'views/bsd_base_view.xml',
         'views/bsd_list_view.xml',
         'views/bsd_form_view.xml',
+        'views/bsd_list_tasks.view.xml',
         
     ],
     # 'demo': [],
